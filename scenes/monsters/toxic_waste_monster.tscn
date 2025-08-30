@@ -1,3 +1,73 @@
-[gd_scene format=3 uid="uid://dyk6c1165mdad"]
+[gd_scene load_steps=12 format=3 uid="uid://dyk6c1165mdad"]
 
-[node name="ToxicWasteMonster" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://stckksc2hb8a" path="res://assets/monsters/toxic_waste_monster-Sheet.png" id="1_tbwfn"]
+[ext_resource type="Script" uid="uid://bgbkytmakk0dt" path="res://scenes/monsters/toxic_waste_monster.gd" id="2_q5uf7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u6gj"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(0, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqhdi"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(360, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fw3c7"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(720, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll0ti"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(1080, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfwf3"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(1440, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrx1p"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(1800, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca4pr"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(2160, 0, 360, 302)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adjeo"]
+atlas = ExtResource("1_tbwfn")
+region = Rect2(2520, 0, 360, 302)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7obnv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u6gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqhdi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fw3c7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll0ti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfwf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrx1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca4pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adjeo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ToxicWasteMonster" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7obnv")
+frame_progress = 0.262167
+script = ExtResource("2_q5uf7")

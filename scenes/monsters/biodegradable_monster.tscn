@@ -1,3 +1,71 @@
-[gd_scene format=3 uid="uid://c4tm82jbftk3x"]
+[gd_scene load_steps=11 format=3 uid="uid://c4tm82jbftk3x"]
 
-[node name="BiodegradableMonster" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dcx01ku8p3j6r" path="res://assets/monsters/biodegradable_monster-Sheet.png" id="1_vk10a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mxn6"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(0, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7moko"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(360, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5bsv"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(720, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3m36a"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(1080, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgyqc"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(1440, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5h0o"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(1800, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idyf2"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(2160, 0, 360, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cmfv"]
+atlas = ExtResource("1_vk10a")
+region = Rect2(2520, 0, 360, 360)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1hh8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mxn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7moko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5bsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3m36a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgyqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5h0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idyf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cmfv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BiodegradableMonster" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_1hh8e")
+frame_progress = 0.169721

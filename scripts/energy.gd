@@ -15,6 +15,6 @@ func change_energy_value(energy: int):
 	value = energy
 
 func zero_energy(energy: int):
-	if energy <= 30:
+	if energy == 0:
 		Game.update_game_state.emit(Utils.GameStateType.Pause)
 		Game.update_ui_state.emit( Utils.UIStateType.GameOver, Utils.GameOverReason.OutOfEnergy)

@@ -1,6 +1,6 @@
 extends Node
 
-const MAX_ENERGY = 128.0
+const MAX_ENERGY = 100.0
 var energy = MAX_ENERGY
 var elapsed_time: float = 0.0
 var base_wait_time: float = 10.0

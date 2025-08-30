@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0pg2d63jve2s"
-path="res://.godot/imported/RMonster.png-1fa3966a312814ad7b99b5c8e164fdaf.ctex"
+uid="uid://cr3a3j1tqp2d"
+path="res://.godot/imported/Rmonster6.png-1afac8d9369b9e0954a246e001f6e59a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/monsters/RMonster.png"
-dest_files=["res://.godot/imported/RMonster.png-1fa3966a312814ad7b99b5c8e164fdaf.ctex"]
+source_file="res://assets/monsters/Recyclable Monster/Rmonster6.png"
+dest_files=["res://.godot/imported/Rmonster6.png-1afac8d9369b9e0954a246e001f6e59a.ctex"]
 
 [params]
 

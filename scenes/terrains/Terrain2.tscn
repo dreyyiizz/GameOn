@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0375rg0ixl16"]
+[gd_scene load_steps=11 format=3 uid="uid://dsrdc0xyuw86s"]
 
-[ext_resource type="Script" uid="uid://cskjjcjavic6o" path="res://scripts/terrain.gd" id="1_wdjee"]
 [ext_resource type="Texture2D" uid="uid://qas3koyaoy7h" path="res://assets/background/ktown2.png" id="1_x1ouo"]
 [ext_resource type="Texture2D" uid="uid://cyu2yaa6na7hj" path="res://assets/background/tile.png" id="3_4gsq6"]
+[ext_resource type="Script" path="res://scripts/ground_area.gd" id="3_x1ouo"]
+[ext_resource type="PackedScene" uid="uid://xsbccim4vkhd" path="res://scenes/monsters/recyclable_monster.tscn" id="4_4gsq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_roftw"]
 size = Vector2(259, 66.5)
@@ -99,9 +100,13 @@ texture_region_size = Vector2i(37, 37)
 tile_size = Vector2i(37, 37)
 sources/0 = SubResource("TileSetAtlasSource_v2xxn")
 
-[node name="Terrain2" type="Node2D" node_paths=PackedStringArray("trash_bin_spawn")]
-script = ExtResource("1_wdjee")
-trash_bin_spawn = NodePath("TrashSpawns/Marker2D4")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsq6"]
+size = Vector2(189, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2xxn"]
+size = Vector2(150.5, 91)
+
+[node name="Terrain2" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -127,30 +132,39 @@ z_index = -1
 position = Vector2(-98, -544)
 texture = ExtResource("1_x1ouo")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TrashDetectors" type="Node2D" parent="."]
+
+[node name="Ground" type="Area2D" parent="TrashDetectors"]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("3_x1ouo")
+ground_y_above = 496
+ground_y_below = 552
+
+[node name="TileMap" type="TileMap" parent="TrashDetectors/Ground"]
 tile_set = SubResource("TileSet_b5l24")
 format = 2
 layer_0/tile_data = PackedInt32Array(983041, 65536, 0, 1048577, 65536, 1, 1114113, 65536, 2, 1179649, 65536, 3, 983042, 131072, 0, 1048578, 131072, 1, 1114114, 131072, 2, 1179650, 131072, 3, 983043, 196608, 0, 1048579, 196608, 1, 1114115, 196608, 2, 1179651, 196608, 3, 983044, 0, 0, 1048580, 0, 1, 1114116, 0, 2, 1179652, 0, 3, 983045, 65536, 0, 1048581, 65536, 1, 1114117, 65536, 2, 1179653, 65536, 3, 983046, 131072, 0, 1048582, 131072, 1, 1114118, 131072, 2, 1179654, 131072, 3, 983047, 196608, 0, 1048583, 196608, 1, 1114119, 196608, 2, 1179655, 196608, 3, 983052, 0, 0, 1048588, 0, 1, 1114124, 0, 2, 1179660, 0, 3, 983053, 65536, 0, 1048589, 65536, 1, 1114125, 65536, 2, 1179661, 65536, 3, 983054, 131072, 0, 1048590, 131072, 1, 1114126, 131072, 2, 1179662, 131072, 3, 983055, 196608, 0, 1048591, 196608, 1, 1114127, 196608, 2, 1179663, 196608, 3, 983056, 0, 0, 1048592, 0, 1, 1114128, 0, 2, 1179664, 0, 3, 983057, 65536, 0, 1048593, 65536, 1, 1114129, 65536, 2, 1179665, 65536, 3, 983058, 131072, 0, 1048594, 131072, 1, 1114130, 131072, 2, 1179666, 131072, 3, 983059, 196608, 0, 1048595, 196608, 1, 1114131, 196608, 2, 1179667, 196608, 3, 983060, 0, 0, 1048596, 0, 1, 1114132, 0, 2, 1179668, 0, 3, 983061, 65536, 0, 1048597, 65536, 1, 1114133, 65536, 2, 1179669, 65536, 3, 983062, 131072, 0, 1048598, 131072, 1, 1114134, 131072, 2, 1179670, 131072, 3, 983063, 196608, 0, 1048599, 196608, 1, 1114135, 196608, 2, 1179671, 196608, 3, 983064, 0, 0, 1048600, 0, 1, 1114136, 0, 2, 1179672, 0, 3, 983065, 65536, 0, 1048601, 65536, 1, 1114137, 65536, 2, 1179673, 65536, 3)
 
-[node name="TrashSpawns" type="Node2D" parent="."]
+[node name="Gap" type="Area2D" parent="TrashDetectors"]
+collision_layer = 2
+collision_mask = 12
+script = ExtResource("3_x1ouo")
+ground_y_above = 496
+ground_y_below = 552
+is_gap = true
+metadata/_custom_type_script = "uid://b4wp3jwnnilir"
 
-[node name="Marker2D2" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(234, 522)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TrashDetectors/Gap"]
+position = Vector2(1057.5, 611.5)
+shape = SubResource("RectangleShape2D_4gsq6")
 
-[node name="Marker2D3" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(474, 522)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashDetectors/Gap"]
+position = Vector2(371.75, 601.5)
+shape = SubResource("RectangleShape2D_v2xxn")
 
-[node name="Marker2D4" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(690, 522)
+[node name="enemy" type="Node" parent="."]
 
-[node name="Marker2D5" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(874, 522)
-
-[node name="Marker2D6" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(880, 320)
-
-[node name="Marker2D7" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(696, 320)
-
-[node name="Marker2D8" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(368, 392)
+[node name="Rmonster" parent="enemy" instance=ExtResource("4_4gsq6")]
+visible = false
+position = Vector2(668, 482)

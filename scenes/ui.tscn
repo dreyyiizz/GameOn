@@ -22,10 +22,10 @@ script = ExtResource("1_nt7q6")
 
 [node name="EnergyBar" parent="." instance=ExtResource("2_x4jx1")]
 layout_mode = 0
-offset_left = 829.0
-offset_top = 1.0
-offset_right = 1148.0
-offset_bottom = 117.0
+offset_left = 299.0
+offset_top = 8.0
+offset_right = 797.0
+offset_bottom = 45.0
 
 [node name="PauseButton" type="Button" parent="."]
 process_mode = 3
@@ -136,10 +136,12 @@ game_menu = NodePath("../GameMenu")
 
 [node name="Time" type="Label" parent="."]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 20.0
-offset_right = 644.0
-offset_bottom = 87.0
+offset_left = 123.0
+offset_top = -5.0
+offset_right = 302.0
+offset_bottom = 62.0
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("10_7dvkv")
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
