@@ -1,15 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnvc3c5c6c8mj"]
+[gd_scene load_steps=15 format=3 uid="uid://cnvc3c5c6c8mj"]
 
 [ext_resource type="Script" uid="uid://cad734vbhmmtg" path="res://scripts/ui.gd" id="1_nt7q6"]
 [ext_resource type="PackedScene" uid="uid://ciuvi7tl2l5wv" path="res://scenes/game_menu.tscn" id="2_p7vwb"]
 [ext_resource type="PackedScene" uid="uid://decqbrmnhe0kb" path="res://scenes/Energy.tscn" id="2_x4jx1"]
 [ext_resource type="ButtonGroup" uid="uid://chvwa86vrsf2w" path="res://resources/ToggleGroup.tres" id="3_8dubc"]
-[ext_resource type="Texture2D" uid="uid://dkm4slomq5oi2" path="res://assets/trashbins/Recyclable.png" id="4_cgfq5"]
-[ext_resource type="Texture2D" uid="uid://dvwb8wipre66u" path="res://assets/trashbins/Biodegradable.png" id="5_7dvkv"]
-[ext_resource type="Texture2D" uid="uid://5xuj16tj4173" path="res://assets/trashbins/ToxicWaste.png" id="6_vdcm2"]
+[ext_resource type="Texture2D" uid="uid://0gcgna3ra4o8" path="res://assets/buttons/button1.png" id="4_vsj0x"]
+[ext_resource type="Texture2D" uid="uid://dxqu4vculyhv8" path="res://assets/buttons/button2.png" id="5_qsv74"]
+[ext_resource type="Texture2D" uid="uid://bj3rk0rmmgxjw" path="res://assets/buttons/button3.png" id="6_h1mc3"]
 [ext_resource type="Script" uid="uid://fn8obobr73c5" path="res://scripts/ui_text_controller.gd" id="8_ktti3"]
 [ext_resource type="Script" uid="uid://d36dng05atbg8" path="res://scripts/ui_visibility_controller.gd" id="9_cgfq5"]
 [ext_resource type="Script" uid="uid://dpd8tl7w64utr" path="res://scenes/time.gd" id="10_7dvkv"]
+[ext_resource type="Texture2D" uid="uid://bjpn81jww2cou" path="res://assets/buttons/blue-Z.png" id="11_cof4p"]
+[ext_resource type="Texture2D" uid="uid://wq2c1b0lf2a8" path="res://assets/buttons/green-X.png" id="12_f7tlh"]
+[ext_resource type="Texture2D" uid="uid://bg72nmvcnnmu" path="res://assets/buttons/red-C.png" id="13_8k7j3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsj0x"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -40,10 +45,11 @@ text = "Pause"
 
 [node name="TempTrashCount" type="Label" parent="."]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 64.0
-offset_right = 56.0
-offset_bottom = 87.0
+offset_left = 92.0
+offset_top = 551.0
+offset_right = 280.0
+offset_bottom = 574.0
+label_settings = SubResource("LabelSettings_vsj0x")
 
 [node name="TempTrashCountdownCount" type="Label" parent="."]
 layout_mode = 0
@@ -54,9 +60,9 @@ offset_bottom = 407.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 64.0
+offset_left = 35.0
 offset_top = 552.0
-offset_right = 297.0
+offset_right = 268.0
 offset_bottom = 627.0
 
 [node name="RecyclableButton" type="Button" parent="HBoxContainer"]
@@ -65,7 +71,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("3_8dubc")
-icon = ExtResource("4_cgfq5")
+icon = ExtResource("4_vsj0x")
 expand_icon = true
 
 [node name="BiodegradableButton" type="Button" parent="HBoxContainer"]
@@ -74,7 +80,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("3_8dubc")
-icon = ExtResource("5_7dvkv")
+icon = ExtResource("5_qsv74")
 expand_icon = true
 
 [node name="ToxicWasteButton" type="Button" parent="HBoxContainer"]
@@ -83,7 +89,7 @@ custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 toggle_mode = true
 button_group = ExtResource("3_8dubc")
-icon = ExtResource("6_vdcm2")
+icon = ExtResource("6_h1mc3")
 expand_icon = true
 
 [node name="GameMenu" parent="." instance=ExtResource("2_p7vwb")]
@@ -142,5 +148,29 @@ offset_top = 20.0
 offset_right = 644.0
 offset_bottom = 87.0
 script = ExtResource("10_7dvkv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 500.0
+offset_right = 95.0
+offset_bottom = 544.0
+texture = ExtResource("11_cof4p")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 501.0
+offset_right = 174.0
+offset_bottom = 545.0
+texture = ExtResource("12_f7tlh")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = 501.0
+offset_right = 253.0
+offset_bottom = 545.0
+texture = ExtResource("13_8k7j3")
 
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

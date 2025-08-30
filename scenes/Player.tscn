@@ -110,7 +110,7 @@ scale = Vector2(0.365234, 0.381836)
 sprite_frames = SubResource("SpriteFrames_70d11")
 animation = &"falling"
 autoplay = "running"
-frame_progress = 0.717169
+frame_progress = 0.017592
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.90735e-06, -1.49997)

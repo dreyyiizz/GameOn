@@ -33,9 +33,7 @@ func _input(event: InputEvent) -> void:
 
 func update_trash_counts():
 	temp_trash_count_display.text = \
-	"rec: %s
-	bio: %s
-	tox: %s
+	"%s                %s                %s
 	" % [
 		Game.collected_recyclable,
 		Game.collected_biodegradable,
