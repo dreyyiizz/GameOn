@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b41nx0fd2tby1"]
+
+[ext_resource type="Script" uid="uid://dbr50fgxiiw06" path="res://scripts/trash_spawner.gd" id="1_nrx2f"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_nrx2f")
+
+[node name="TrashTimer" type="Timer" parent="."]

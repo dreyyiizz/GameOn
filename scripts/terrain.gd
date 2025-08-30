@@ -5,6 +5,7 @@ class_name Terrain
 @onready var trash_spawns: Node2D = $TrashSpawns
 var max_markers: int = 0
 @export var trash_bin_spawn: Marker2D
+@export var monster_spawn: Marker2D
 
 func _ready() -> void:
 	max_markers = trash_spawns.get_child_count()
@@ -15,6 +16,7 @@ func _ready() -> void:
 	else:
 		spawn_trashes()
 		Game.decrease_trash_bin_countdown()
+	spawn_monster_spawner()
 	
 func spawn_trashes():
 	if max_markers == 0:
@@ -42,3 +44,11 @@ func spawn_trash_bin():
 
 
 	trash_bin_spawn.add_child(trash_bin)
+
+func spawn_monster_spawner():
+	if not monster_spawn:
+		printerr("No monster spawn set")
+		return
+	var spawner: MonsterSpawner = preload("res://scenes/monster_spawner.tscn").instantiate()
+	spawner.terrain_manager = get_parent() as TerrainManager
+	monster_spawn.add_child(spawner)

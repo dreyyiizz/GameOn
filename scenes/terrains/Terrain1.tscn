@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dojoskcwuf8np"]
+[gd_scene load_steps=9 format=3 uid="uid://dojoskcwuf8np"]
 
 [ext_resource type="Texture2D" uid="uid://cjycekvxg3hbt" path="res://assets/background/ktown1.png" id="1_qm0yi"]
 [ext_resource type="Script" uid="uid://cskjjcjavic6o" path="res://scripts/terrain.gd" id="1_s3xfo"]
 [ext_resource type="Texture2D" uid="uid://cyu2yaa6na7hj" path="res://assets/background/tile.png" id="3_qm0yi"]
+[ext_resource type="PackedScene" uid="uid://dqm8pwmtpa3e4" path="res://scenes/monster_spawner.tscn" id="4_qm0yi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20fd"]
 size = Vector2(366.438, 76.25)
@@ -584,3 +585,7 @@ position = Vector2(1072, 416)
 
 [node name="Marker2D6" type="Marker2D" parent="TrashSpawns"]
 position = Vector2(840, 416)
+
+[node name="Monster Spawn" type="Node2D" parent="."]
+
+[node name="MonsterSpawner" parent="Monster Spawn" instance=ExtResource("4_qm0yi")]
