@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://5xuj16tj4173" path="res://assets/trashbins/ToxicWaste.png" id="6_vdcm2"]
 [ext_resource type="Script" uid="uid://fn8obobr73c5" path="res://scripts/ui_text_controller.gd" id="8_ktti3"]
 [ext_resource type="Script" uid="uid://d36dng05atbg8" path="res://scripts/ui_visibility_controller.gd" id="9_cgfq5"]
-[ext_resource type="Script" path="res://scenes/time.gd" id="10_7dvkv"]
+[ext_resource type="Script" uid="uid://dpd8tl7w64utr" path="res://scenes/time.gd" id="10_7dvkv"]
 
 [node name="UI" type="Control"]
 process_mode = 3
