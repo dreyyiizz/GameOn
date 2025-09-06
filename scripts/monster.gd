@@ -26,11 +26,6 @@ func _ready() -> void:
 		Game.changed_trash_type.connect(change_player_collision)
 
 	# Hook collision: if PlayerCollisionArea is an Area2D, listen for overlaps
-	if player_collision_area is Area2D:
-		(player_collision_area as Area2D)._area_entered.connect(_on_monster_area_entered)
-
-func _on_monster_area_entered(area: Area2D) -> void:
-	var parent := area.get_parent()
 
 func change_player_collision(trash_type: Utils.TrashType) -> void:
 	if player_collision_area == null:

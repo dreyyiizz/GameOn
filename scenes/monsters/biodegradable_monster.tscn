@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://c4tm82jbftk3x"]
 
 [ext_resource type="Script" uid="uid://dmh1s0jblhc0i" path="res://scripts/monster.gd" id="1_2mxn6"]
-[ext_resource type="Texture2D" uid="uid://74hl5m40dsdc" path="res://assets/monsters/biodegradable_monster-Sheet.png" id="1_vk10a"]
+[ext_resource type="Texture2D" uid="uid://cvr7hnqg14e2h" path="res://assets/monsters/biodegradable_monster-Sheet.png" id="1_vk10a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vk10a"]
 atlas = ExtResource("1_vk10a")

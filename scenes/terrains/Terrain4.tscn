@@ -1,20 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnp6ljvs2pcb"]
+[gd_scene load_steps=10 format=4 uid="uid://dnp6ljvs2pcb"]
 
 [ext_resource type="Script" uid="uid://cskjjcjavic6o" path="res://scripts/terrain.gd" id="1_01fo8"]
-[ext_resource type="Texture2D" uid="uid://hh1bl1hj407j" path="res://assets/background/emperador.png" id="1_scr0v"]
+[ext_resource type="Texture2D" uid="uid://b235xgq37fw3v" path="res://assets/background/ICC.png" id="2_scr0v"]
 [ext_resource type="Texture2D" uid="uid://cyu2yaa6na7hj" path="res://assets/background/tile.png" id="3_i4max"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w20fd"]
-size = Vector2(114, 76.25)
+size = Vector2(146, 73.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlmq3"]
-size = Vector2(256, 148)
+size = Vector2(628, 23.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3giw"]
-size = Vector2(144.5, 94)
+size = Vector2(858.547, 123.769)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm0yi"]
-size = Vector2(370, 74)
+size = Vector2(185, 68)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjqgp"]
 texture = ExtResource("3_i4max")
@@ -45,53 +45,57 @@ script = ExtResource("1_01fo8")
 trash_bin_spawn = NodePath("TrashSpawns/Marker2D3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, 3)
 collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(128, 610.25)
+position = Vector2(76, 609.563)
 shape = SubResource("RectangleShape2D_w20fd")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(462, 573)
+position = Vector2(575, 436)
 shape = SubResource("RectangleShape2D_tlmq3")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(1074, 546)
+position = Vector2(575.738, 664.193)
+rotation = -0.00553886
 shape = SubResource("RectangleShape2D_l3giw")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(962, 610)
+position = Vector2(1093.5, 607)
 shape = SubResource("RectangleShape2D_qm0yi")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(565, 162)
-scale = Vector2(1, 1.034)
-texture = ExtResource("1_scr0v")
+position = Vector2(554, 266)
+scale = Vector2(2.17334, 1.87609)
+texture = ExtResource("2_scr0v")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAA8AAgAAAAAAAAACABAAAgAAAAEAAAACABEAAgAAAAIAAAACABIAAgAAAAMAAAADAA8AAgABAAAAAAADABAAAgABAAEAAAADABEAAgABAAIAAAADABIAAgABAAMAAAAEABAAAgAAAAAAAAAEABEAAgAAAAEAAAAEABIAAgACAAMAAAAFABAAAgABAAAAAAAFABEAAgABAAEAAAAFABIAAgADAAMAAAAJABAAAgADAAAAAAAKABAAAgAAAAAAAAALABAAAgABAAAAAAAMABAAAgACAAAAAAANABAAAgADAAAAAAAOABAAAgAAAAAAAAAPABAAAgABAAAAAAAVABEAAgACAAEAAAAVABIAAgADAAIAAAAWABAAAgADAAAAAAAWABEAAgADAAEAAAAWABIAAgAAAAIAAAAXABAAAgAAAAAAAAAXABEAAgAAAAEAAAAXABIAAgABAAIAAAAYABAAAgABAAAAAAAYABEAAgABAAEAAAAYABIAAgACAAIAAAAZABAAAgACAAAAAAAZABEAAgACAAEAAAAZABIAAgADAAIAAAAaABAAAgADAAAAAAAaABEAAgADAAEAAAAaABIAAgAAAAIAAAAbABEAAgAAAAIAAAAbABIAAgAAAAIAAAAcABEAAgABAAIAAAAcABIAAgABAAIAAAAGABAAAgAAAAAAAAAGABEAAgAAAAEAAAAGABIAAgAAAAIAAAAGABMAAgAAAAMAAAAHABAAAgABAAAAAAAHABEAAgABAAEAAAAHABIAAgABAAIAAAAHABMAAgABAAMAAAAIABAAAgACAAAAAAAIABEAAgACAAEAAAAIABIAAgACAAIAAAAIABMAAgACAAMAAAAJABEAAgADAAEAAAAJABIAAgADAAIAAAAJABMAAgADAAMAAAAKABEAAgAAAAEAAAAKABIAAgAAAAIAAAAKABMAAgAAAAMAAAALABEAAgABAAEAAAALABIAAgABAAIAAAALABMAAgABAAMAAAAMABEAAgACAAEAAAAMABIAAgACAAIAAAAMABMAAgACAAMAAAANABEAAgADAAEAAAANABIAAgADAAIAAAANABMAAgADAAMAAAAOABEAAgAAAAEAAAAOABIAAgAAAAIAAAAOABMAAgAAAAMAAAAPABEAAgABAAEAAAAPABIAAgABAAIAAAAPABMAAgABAAMAAAAQABAAAgACAAAAAAAQABEAAgACAAEAAAAQABIAAgACAAIAAAAQABMAAgACAAMAAAARABAAAgADAAAAAAARABEAAgADAAEAAAARABIAAgADAAIAAAARABMAAgADAAMAAAASABAAAgAAAAAAAAASABEAAgAAAAEAAAASABIAAgAAAAIAAAASABMAAgAAAAMAAAATABAAAgAAAAAAAAATABEAAgAAAAEAAAATABIAAgABAAIAAAATABMAAgABAAMAAAAUABAAAgABAAAAAAAUABEAAgABAAEAAAAUABIAAgACAAIAAAAUABMAAgACAAMAAAAVABMAAgADAAMAAAAVABAAAgACAAAAAAAbABAAAgADAAEAAAAcABAAAgADAAEAAAAdABAAAgADAAEAAAAdABEAAgACAAIAAAAdABIAAgACAAIAAAAWABMAAgAAAAMAAAAXABMAAgABAAMAAAAYABMAAgACAAMAAAAZABMAAgADAAMAAAAaABMAAgAAAAMAAAAbABMAAgAAAAMAAAAcABMAAgABAAMAAAAdABMAAgACAAMAAAAeABEAAgADAAIAAAAeABIAAgADAAIAAAAeABMAAgADAAMAAAAeABAAAgADAAEAAAAbAA8AAgAAAAAAAAAcAA8AAgABAAAAAAAdAA8AAgACAAAAAAAeAA8AAgADAAAAAAABAA8AAgADAAAAAAABABAAAgADAAEAAAABABEAAgADAAIAAAABABIAAgADAAMAAAAAAA8AAgADAAAAAAAAABAAAgADAAEAAAAAABEAAgADAAIAAAAAABIAAgADAAMAAAAAABMAAgABAAMAAAABABMAAgABAAMAAAACABMAAgABAAMAAAADABMAAgABAAMAAAAEABMAAgABAAMAAAAFABMAAgABAAMAAAAOAAsAAgACAAAAAAANAAsAAgABAAAAAAAMAAsAAgAAAAAAAAALAAsAAgADAAAAAAAKAAsAAgACAAAAAAAJAAsAAgABAAAAAAAIAAsAAgAAAAAAAAAXAAsAAgADAAAAAAAWAAsAAgACAAAAAAAVAAsAAgABAAAAAAAUAAsAAgAAAAAAAAATAAsAAgABAAAAAAASAAsAAgAAAAAAAAARAAsAAgABAAAAAAAQAAsAAgAAAAAAAAAPAAsAAgADAAAAAAAfAA8AAgAAAAAAAAAfABAAAgAAAAEAAAAfABEAAgAAAAIAAAAfABIAAgAAAAMAAAAfABMAAgAAAAMAAAAHAAsAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_hyh5j")
 
 [node name="TrashSpawns" type="Node2D" parent="."]
+position = Vector2(-4, -1)
 
 [node name="Marker2D" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(128, 512)
+position = Vector2(48, 512)
 
 [node name="Marker2D2" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(378, 450)
+position = Vector2(378, 371)
 
 [node name="Marker2D3" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(530, 450)
+position = Vector2(619, 370)
 
 [node name="Marker2D4" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(840, 512)
+position = Vector2(591, 537)
 
 [node name="Marker2D5" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(840, 416)
+position = Vector2(808, 373)
 
 [node name="Marker2D6" type="Marker2D" parent="TrashSpawns"]
-position = Vector2(1002, 458)
+position = Vector2(1050, 512)

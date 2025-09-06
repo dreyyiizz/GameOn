@@ -12,7 +12,7 @@ class_name MonsterSpawner
 func _ready() -> void:
 	if Game.elapsed_time >= 20:
 		var spawn_rate = randf()
-		if spawn_rate < 0.8:
+		if spawn_rate < 0.5:
 			spawn_monster()
 
 func spawn_monster() -> void:

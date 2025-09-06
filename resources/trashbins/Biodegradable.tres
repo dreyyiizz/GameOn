@@ -53,3 +53,4 @@ script = ExtResource("1_lkeyv")
 type = 1
 sprite_frames = SubResource("SpriteFrames_accb2")
 icon_image = ExtResource("1_jx0s7")
+metadata/_custom_type_script = "uid://dywqk6eaqhfmn"

@@ -76,8 +76,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3y70"]
-size = Vector2(94.1083, 139.565)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dkrhh"]
+radius = 46.9564
+height = 135.652
 
 [node name="RecyclableMonster" type="Node2D" node_paths=PackedStringArray("anim")]
 script = ExtResource("1_dkrhh")
@@ -99,6 +100,5 @@ collision_layer = 16
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RecyclableMonster/Area2D"]
-position = Vector2(-20.9673, 28.2796)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_g3y70")
+position = Vector2(-14.3478, 32.1927)
+shape = SubResource("CapsuleShape2D_dkrhh")
