@@ -23,7 +23,7 @@ script = ExtResource("1_h6nst")
 
 [node name="Player" parent="." instance=ExtResource("1_nbc6x")]
 z_index = 1
-position = Vector2(320, 320)
+position = Vector2(328, 497)
 
 [node name="TerrainManager" type="Node2D" parent="."]
 script = ExtResource("4_vcsgt")

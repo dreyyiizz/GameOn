@@ -1,74 +1,440 @@
 [gd_scene load_steps=17 format=3 uid="uid://41pdkr7cyd1k"]
 
 [ext_resource type="Script" uid="uid://cgceewwcvxwth" path="res://scripts/scene/scene_transition.gd" id="1_rujfs"]
-[ext_resource type="Texture2D" uid="uid://b271yps1f810d" path="res://assets/menu/GarbageTransition-Sheet.png" id="2_rujfs"]
+[ext_resource type="Texture2D" uid="uid://c36ux6awwi56f" path="res://assets/background/sky.jpg" id="3_2sgj6"]
+[ext_resource type="PackedScene" uid="uid://dp76dpjp7isbq" path="res://scenes/terrains/Start.tscn" id="3_hgfgv"]
+[ext_resource type="Texture2D" uid="uid://cghdmalkrkx3s" path="res://assets/Player/avatar.png" id="4_hgfgv"]
+[ext_resource type="Texture2D" uid="uid://cf3y580tv5shs" path="res://assets/background/21.png" id="4_non66"]
+[ext_resource type="Texture2D" uid="uid://bxug1ni6gb5ru" path="res://assets/background/23.png" id="5_h8vuu"]
+[ext_resource type="Texture2D" uid="uid://cj7r2pyy74b8d" path="res://assets/background/5.png" id="6_l5v6o"]
+[ext_resource type="Texture2D" uid="uid://bo5gvumie1le6" path="res://assets/background/underground.png" id="7_73nkw"]
 
 [sub_resource type="Animation" id="Animation_2sgj6"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("PlayerAnim:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
+"update": 0,
+"values": [Vector2(328, 481)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/path = NodePath("PlayerAnim:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 0.137)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Start:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Parallax/Background:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Parallax/Midground:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Parallax/Foreground:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Parallax/Background:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Parallax/Midground:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Parallax/Foreground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Start:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sky:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sky:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_rujfs"]
 resource_name = "fade_in"
-length = 0.5
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-
-[sub_resource type="Animation" id="Animation_hgfgv"]
-resource_name = "fade_out"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
+tracks/0/path = NodePath("PlayerAnim:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.416667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [8, 7, 6, 5, 4, 3, 2, 1, 0]
+"times": PackedFloat32Array(0, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(594.679, 503.72), Vector2(900, 503.72), Vector2(333, 503.72)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/path = NodePath("PlayerAnim:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.470744),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.13, 0.137)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PlayerAnim:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Start:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.166667),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Start:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.166667, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Parallax/Background:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.166667, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Parallax/Midground:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.167035, 0.433702),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Parallax/Foreground:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.167035, 0.433702),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Parallax/Background:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.167035),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Parallax/Midground:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.167035),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Parallax/Foreground:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.167035),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Start:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.166667, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1250, 0), Vector2(0, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sky:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.167035, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sky:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.167035),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_hgfgv"]
+resource_name = "fade_out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnim:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Start:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Parallax/Background:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Parallax/Midground:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Parallax/Foreground:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sky:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Start:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.00266038, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -81,51 +447,21 @@ _data = {
 &"fade_out": SubResource("Animation_hgfgv")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rujfs"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(0, 0, 1890, 1417)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sgj6"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(1890, 0, 1890, 1417)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hgfgv"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(3780, 0, 1890, 1417)
+atlas = ExtResource("4_hgfgv")
+region = Rect2(0, 1536, 1536, 1536)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85h84"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(0, 1417, 1890, 1417)
+atlas = ExtResource("4_hgfgv")
+region = Rect2(0, 0, 1536, 1536)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ooyqd"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(1890, 1417, 1890, 1417)
+atlas = ExtResource("4_hgfgv")
+region = Rect2(3072, 1536, 1536, 1536)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_non66"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(3780, 1417, 1890, 1417)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h8vuu"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(0, 2834, 1890, 1417)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5v6o"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(1890, 2834, 1890, 1417)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_73nkw"]
-atlas = ExtResource("2_rujfs")
-region = Rect2(3780, 2834, 1890, 1417)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ovque"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rujfs"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rujfs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2sgj6")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hgfgv")
 }, {
@@ -134,41 +470,84 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ooyqd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_non66")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h8vuu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l5v6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_73nkw")
 }],
-"loop": false,
-"name": &"fill",
-"speed": 15.0
+"loop": true,
+"name": &"run ",
+"speed": 5.0
 }]
 
 [node name="SceneTransition" type="CanvasLayer"]
 script = ExtResource("1_rujfs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Sky" type="Sprite2D" parent="."]
 visible = false
-offset_right = 1160.0
-offset_bottom = 656.0
-color = Color(0, 0, 0, 1)
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+scale = Vector2(1.5625, 1.35266)
+texture = ExtResource("3_2sgj6")
+centered = false
 
-[node name="GarbageAnimation" type="AnimationPlayer" parent="."]
-root_node = NodePath("../GarbageTrans")
+[node name="Start" parent="." instance=ExtResource("3_hgfgv")]
+visible = false
+
+[node name="SceneAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_hgfgv")
 }
+autoplay = "RESET"
 
-[node name="GarbageTrans" type="AnimatedSprite2D" parent="."]
-position = Vector2(575.5, 324)
-scale = Vector2(0.610053, 0.457304)
-sprite_frames = SubResource("SpriteFrames_ovque")
-animation = &"fill"
+[node name="PlayerAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(328, 481)
+scale = Vector2(0.13, 0.137)
+sprite_frames = SubResource("SpriteFrames_rujfs")
+animation = &"run "
+autoplay = "run "
+frame = 2
+frame_progress = 0.130665
+
+[node name="Parallax" type="Node" parent="."]
+
+[node name="Background" type="Parallax2D" parent="Parallax"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(-50, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Background"]
+position = Vector2(576, 306.5)
+scale = Vector2(1.98958, 1.55864)
+texture = ExtResource("4_non66")
+
+[node name="Midground" type="Parallax2D" parent="Parallax"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Midground"]
+scale = Vector2(2.00347, 1.73765)
+texture = ExtResource("5_h8vuu")
+centered = false
+
+[node name="Foreground" type="Parallax2D" parent="Parallax"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+repeat_size = Vector2(1150, 0)
+autoscroll = Vector2(-150, 0)
+repeat_times = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax/Foreground"]
+scale = Vector2(2.01215, 1.74383)
+texture = ExtResource("6_l5v6o")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/Foreground"]
+position = Vector2(0, 471)
+scale = Vector2(1.00435, 1.045)
+texture = ExtResource("7_73nkw")
+centered = false
